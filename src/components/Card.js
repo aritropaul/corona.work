@@ -22,21 +22,45 @@ function Card(props) {
         hidden: { opacity: 0, y: 200}
     }
 
-    return (
-        <motion.div className = "Card four columns"
-            initial="hidden"
-            animate="visible"
-            custom={props.i}
-            variants={variants}>
-            <div className="data">
-                <h4>{props.title}</h4>
-                <p>{props.role}</p>
-            </div>
-            <a href={props.link} className="linker">
-                Apply Here
-            </a>
-        </motion.div>
-    )
+    if (props.type !== undefined) {
+        return (
+            <motion.div className = "Card four columns"
+                initial="hidden"
+                animate="visible"
+                custom={props.i}
+                variants={variants}>
+                <div className="data seven columns">
+                    <h4>{props.title}</h4>
+                </div>
+                <div className="chip four columns">
+                    {props.type}
+                </div>
+                <div className="data ten columns">
+                    <p>{props.role}</p>
+                </div>
+                <a href={props.link} className="linker">
+                    Apply Here
+                </a>
+            </motion.div>
+        )
+    }
+    else {
+        return (
+            <motion.div className = "Card four columns"
+                initial="hidden"
+                animate="visible"
+                custom={props.i}
+                variants={variants}>
+                <div className="data">
+                    <h4>{props.title}</h4>
+                    <p>{props.role}</p>
+                </div>
+                <a href={props.link} className="linker">
+                    Apply Here
+                </a>
+            </motion.div>
+        )
+    }
 }
 
 export default Card

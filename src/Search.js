@@ -10,7 +10,8 @@ function Search() {
 
     let location = useLocation();
     let place = location.state.location
-    let type = location.state.industry
+    let type = location.state.type
+    let industry = location.state.industry
     let jobs = location.state.jobs.jobs
 
   if ( place !== undefined || type !== undefined) {
@@ -18,7 +19,7 @@ function Search() {
         return (
             <div className="Search">
               <Header></Header>
-              <Title location={place} type={type}></Title>
+              <Title location={place} type={industry}></Title>
               <div className="container main row">
                 {
                     jobs.map((job, i) =>{ 
@@ -27,6 +28,7 @@ function Search() {
                             title={job['Company Name']} 
                             role={job['Roles']}
                             i={i}
+                            type={job['Type']}
                             link={job['Where to apply']} ></Card>
                         )
                     })

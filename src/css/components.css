@@ -45,13 +45,26 @@ a:hover {
     color: rgb(240, 240, 240);
 }
 
+.chip {
+    /* margin-right: 5px; */
+    margin-top: 20px;
+    display: inline-block;
+    background: rgb(58, 58, 58);
+    padding: 0 12px;
+    height: 32px;
+    line-height: 32px;
+    border-radius: 32px;
+    font-size: 13px;
+    text-align: center;
+}
+
 .Card {
     margin-top: 5%;
     margin-right: 25px;
     margin-left: 0;
     padding: 8px;
     border-radius: 8px;
-    height: 200px;
+    height: 225px;
     background: rgb(20, 20, 20);
     border: 1px solid hsla(0, 0%, 87.8%, 0);
     position: relative;
@@ -79,7 +92,7 @@ a:hover {
 
 .data {
     margin-top: 20px;
-    margin-left: 10px;
+    margin-left: 10px !important;
 }
 
 .landing {

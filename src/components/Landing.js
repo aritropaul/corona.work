@@ -12,6 +12,14 @@ function Landing() {
     let history = useHistory();
 
     const jobTypes = [
+        "Full-Time",
+        "Part-Time",
+        "Internship",
+        "Remote",
+        "Contract"
+    ]
+
+    const jobIndustry = [
         "Agriculture & Dairy",
         "Apparel & Fashion",
         "Architecture/Interior Design",
@@ -102,23 +110,25 @@ function Landing() {
 
     const [value, setValue] = React.useState("");
     const [type, setType] = React.useState("")
+    const [industry, setIndustry] = React.useState("")
 
+    
     const handleSubmit = (e) => {
         e.preventDefault()
-        if (type === "") {
-            fetch('https://covid-work.herokuapp.com/search?location='+value)
+        if (industry === "") {
+            fetch('https://covid-work.herokuapp.com/search?location='+value+'&type='+type)
             .then(response => response.json())
             .then(data => history.push({
                 pathname: '/search', 
-                state: {location: value, jobs: data}
+                state: {location: value, type: type, jobs: data}
             }));
         }
         else {
-            fetch('https://covid-work.herokuapp.com/search?location='+value+'&industry='+type)
+            fetch('https://covid-work.herokuapp.com/search?location='+value+'&industry='+industry+'&type='+type)
             .then(response => response.json())
             .then(data => history.push({
                 pathname: '/search', 
-                state: {location: value, industry: type, jobs: data}
+                state: {location: value, industry: industry, type: type, jobs: data}
             }));
         }
     }
@@ -138,16 +148,26 @@ function Landing() {
             <form onSubmit={handleSubmit}>
                 <input
                     name="location"
-                    className="locationField four columns"
+                    className="locationField three columns"
                     value={value}
                     onChange={e => setValue(e.target.value)}
                     placeholder="Search for a location"
                     required
                 ></input>
-                <select value={type} onChange = { e => setType(e.target.value)}className="three columns">
-                    <option value="" disabled selected>Select your Field</option>
+                <select value={type} onChange = { e => setType(e.target.value)}className="three columns" required>
+                    <option value="" disabled selected>Job Type</option>
                     {
                         jobTypes.map((type) => {
+                            return(
+                                <option value={type}>{type}</option>
+                            )
+                        })
+                    }
+                </select>
+                <select value={industry} onChange = { e => setIndustry(e.target.value)}className="three columns">
+                    <option value="" disabled selected>Select your Field</option>
+                    {
+                        jobIndustry.map((type) => {
                             return(
                                 <option value={type}>{type}</option>
                             )
