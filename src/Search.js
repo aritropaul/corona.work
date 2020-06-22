@@ -14,26 +14,40 @@ function Search(props) {
     let jobs = location.state.jobs.jobs
 
   if ( place !== undefined || type !== undefined) {
-    return (
-        <div className="Search">
-          <Header></Header>
-          <Title location={place} type={type}></Title>
-          <div className="container main row">
-            {
-                jobs.map((job, i) =>{ 
-                    return (
-                        <Card 
-                        title={job['Company Name']} 
-                        role={job['Roles']}
-                        i={i}
-                        link={job['Where to Apply']} ></Card>
-                    )
-                })
-            }
-          </div>
-          <Footer></Footer>
-        </div>
-      );
+    if (jobs.length > 0) {
+        return (
+            <div className="Search">
+              <Header></Header>
+              <Title location={place} type={type}></Title>
+              <div className="container main row">
+                {
+                    jobs.map((job, i) =>{ 
+                        return (
+                            <Card 
+                            title={job['Company Name']} 
+                            role={job['Roles']}
+                            i={i}
+                            link={job['Where to apply']} ></Card>
+                        )
+                    })
+                }
+              </div>
+              <Footer></Footer>
+            </div>
+        );
+    }
+    else {
+        return (
+            <div className="Search">
+              <Header></Header>
+              <Title location={place} type={type}></Title>
+              <div className="container main row">
+                <h5> <span role="img" aria-label="embarrased"> 😳 </span> Sorry there are no such jobs available right now.</h5>
+              </div>
+              <Footer></Footer>
+            </div>
+        );
+    }
   }
 }
 

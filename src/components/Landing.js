@@ -122,12 +122,22 @@ function Landing() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        fetch('https://covid-work.herokuapp.com/search?location='+value+'&industry='+type)
-        .then(response => response.json())
-        .then(data => history.push({
-            pathname: '/search', 
-            state: {location: value, industry: type, jobs: data}
-        }));    
+        if (type === "") {
+            fetch('https://covid-work.herokuapp.com/search?location='+value)
+            .then(response => response.json())
+            .then(data => history.push({
+                pathname: '/search', 
+                state: {location: value, industry: type, jobs: data}
+            }));
+        }
+        else {
+            fetch('https://covid-work.herokuapp.com/search?location='+value+'&industry='+type)
+            .then(response => response.json())
+            .then(data => history.push({
+                pathname: '/search', 
+                state: {location: value, jobs: data}
+            }));
+        }
     }
 
     return(
@@ -149,6 +159,7 @@ function Landing() {
                     value={value}
                     onChange={e => setValue(e.target.value)}
                     placeholder="Search for a location"
+                    required
                 ></input>
                 <select value={type} onChange = { e => setType(e.target.value)}className="three columns">
                     <option value="" disabled selected>Select your Field</option>
