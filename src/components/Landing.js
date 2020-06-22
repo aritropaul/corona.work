@@ -110,7 +110,6 @@ function Landing() {
 
     const [value, setValue] = React.useState("");
     const [type, setType] = React.useState("")
-    const [industry, setIndustry] = React.useState("")
 
     
     const handleSubmit = (e) => {
