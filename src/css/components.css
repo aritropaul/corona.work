@@ -149,6 +149,13 @@ h4 {
     letter-spacing: 1px;
 }
 
+h5 {
+    font-size: 100%;
+    font-weight: 300;
+    margin-bottom: 0;
+    letter-spacing: 1px;
+}
+
 p {
     font-size: 100%;
     font-weight: 400;
