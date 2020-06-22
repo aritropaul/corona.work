@@ -24,6 +24,17 @@ body {
     .main {
         margin-top: 20%;
     }
+    .linker {
+        position: absolute;
+        bottom: 8px;
+        left: 8px;
+        right: 8px;
+        border-radius: 8px;
+        padding: 5%;
+        text-align: center;
+        z-index: 1;
+        background-color: rgb(94, 92, 230);
+    }
 }
 
 .Header {
@@ -64,7 +75,7 @@ a:hover {
     margin-left: 0;
     padding: 8px;
     border-radius: 8px;
-    height: 225px;
+    height: 250px;
     background: rgb(20, 20, 20);
     border: 1px solid hsla(0, 0%, 87.8%, 0);
     position: relative;
@@ -83,7 +94,9 @@ a:hover {
     border-radius: 8px;
     padding: 5%;
     text-align: center;
+    z-index: 1;
     background-color: rgb(94, 92, 230);
+    border: none;
 }
 
 .main {

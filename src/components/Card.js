@@ -7,6 +7,7 @@ import { motion } from "framer-motion"
 
 function Card(props) {
 
+
     const variants = {
         visible: i => ({
             opacity: 1,
@@ -24,6 +25,7 @@ function Card(props) {
 
     if (props.type !== undefined) {
         return (
+            <a href={props.link}>
             <motion.div className = "Card four columns"
                 initial="hidden"
                 animate="visible"
@@ -35,13 +37,14 @@ function Card(props) {
                 <div className="chip four columns">
                     {props.type}
                 </div>
-                <div className="data ten columns">
+                <div className="data eight columns">
                     <p>{props.role}</p>
                 </div>
-                <a href={props.link} className="linker">
-                    Apply Here
-                </a>
+                <div className="linker">
+                    <h5>APPLY HERE</h5>
+                </div>
             </motion.div>
+            </a>
         )
     }
     else {
