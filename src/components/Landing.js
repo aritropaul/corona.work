@@ -122,7 +122,7 @@ function Landing() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        fetch('http://localhost:3000/search?location='+value+'&industry='+type)
+        fetch('https://covid-work.herokuapp.com/search?location='+value+'&industry='+type)
         .then(response => response.json())
         .then(data => history.push({
             pathname: '/search', 
