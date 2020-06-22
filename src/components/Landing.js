@@ -57,7 +57,7 @@ function Landing() {
         "KPO/ Research/ Analytics",
         "Legal",
         "Logistics & Supply Chain",
-        "Management Consulting"
+        "Management Consulting",
         "Manufacturing",
         "Maritime",
         "Marketing & Advertising",
