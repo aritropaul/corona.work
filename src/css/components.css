@@ -1,0 +1,167 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: rgb(10, 10, 10);
+    color: rgb(240, 240, 240);
+}
+
+@media (max-width: 375px) {
+    html,
+    body {
+        overflow-x: hidden;
+    }
+    .container {
+        width: 80%;
+        margin-left: 10%;
+    }
+    .Header {
+        margin-top: 10% !important;
+    }
+    .App {
+        position: relative;
+        width: 100%;
+        overflow-x: hidden;
+    }
+    .main {
+        margin-top: 20%;
+    }
+}
+
+.Header {
+    margin-top: 4%;
+    padding: 2%;
+    font-weight: 600;
+    color: rgb(240, 240, 240);
+}
+
+.row {
+    align-items: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+    color: rgb(240, 240, 240);
+}
+
+.Card {
+    margin-top: 5%;
+    margin-right: 25px;
+    margin-left: 0;
+    padding: 8px;
+    border-radius: 8px;
+    height: 200px;
+    background: rgb(20, 20, 20);
+    border: 1px solid hsla(0, 0%, 87.8%, 0);
+    position: relative;
+}
+
+.Card:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid hsla(0, 0%, 87.8%, 0);
+}
+
+.linker {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    right: 8px;
+    border-radius: 8px;
+    padding: 5%;
+    text-align: center;
+    background-color: rgb(94, 92, 230);
+}
+
+.main {
+    margin-top: 5%;
+}
+
+.data {
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.landing {
+    margin-top: 10%;
+    padding: 2%;
+}
+
+.search {
+    margin-top: 5%;
+}
+
+input {
+    background-color: rgb(12, 12, 12);
+    border: none !important;
+    height: 60px !important;
+    border-radius: 8px;
+    padding-left: 15px;
+    margin-bottom: 3%;
+}
+
+input:focus {
+    border: none !important;
+    outline: none;
+}
+
+input[type="submit"] {
+    color: rgb(94, 92, 230);
+    border-radius: 8px;
+    margin-bottom: 3%;
+}
+
+input[type="submit"]:hover {
+    color: rgb(76, 74, 194);
+    background-color: rgba(94, 92, 230, 0.2);
+}
+
+select {
+    background-color: rgb(12, 12, 12);
+    border: none;
+    outline: none;
+    height: 60px !important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    margin-bottom: 5%;
+}
+
+option:first {
+    color: rgb(15, 15, 15);
+}
+
+select:focus {
+    background-color: rgb(15, 15, 15);
+    border: none;
+}
+
+h1 {
+    font-size: 300%;
+    font-weight: 500;
+    margin-bottom: 0;
+    letter-spacing: 1px;
+}
+
+h4 {
+    font-size: 120%;
+    font-weight: 500;
+    margin-bottom: 0;
+    letter-spacing: 1px;
+}
+
+p {
+    font-size: 100%;
+    font-weight: 400;
+    color: rgb(70, 70, 70);
+    margin-bottom: 5px;
+}
+
+.Footer {
+    font-size: x-small;
+    text-align: center;
+    margin-top: 10%;
+}
+
+.Footer>p {
+    font-weight: 600;
+}
