@@ -3,18 +3,16 @@ import React from 'react'
 import '../css/skeleton.css'
 import '../css/normalize.css'
 import '../css/components.css'
+import {Link} from 'react-router-dom'
 
 function Header() {
     return (
         <div className = "Header container">
+            <Link to="/">
             <div className = "ten columns">
-                corona.work
+                covid19india.work
             </div>
-            {/* <div className = "two columns">
-                <button>
-                    <feather className="icons sun"></feather>
-                </button>
-            </div> */}
+            </Link>
         </div>
     )
 }
