@@ -148,7 +148,7 @@ function Landing() {
             <form onSubmit={handleSubmit}>
                 <input
                     name="location"
-                    className="locationField three columns"
+                    className="locationField four columns"
                     value={value}
                     onChange={e => setValue(e.target.value)}
                     placeholder="Search for a location"
@@ -158,16 +158,6 @@ function Landing() {
                     <option value="" disabled selected>Job Type</option>
                     {
                         jobTypes.map((type) => {
-                            return(
-                                <option value={type}>{type}</option>
-                            )
-                        })
-                    }
-                </select>
-                <select value={industry} onChange = { e => setIndustry(e.target.value)}className="three columns">
-                    <option value="" disabled selected>Select an Industry</option>
-                    {
-                        jobIndustry.map((type) => {
                             return(
                                 <option value={type}>{type}</option>
                             )
