@@ -42,7 +42,7 @@ function Search() {
         return (
             <div className="Search">
               <Header></Header>
-              <Title location={place} type={type}></Title>
+              <Title location={place} type={industry}></Title>
               <div className="container main row">
                 <h5> <span role="img" aria-label="embarrased"> 😳 </span>&nbsp; Sorry there are no such jobs available right now.</h5>
               </div>
