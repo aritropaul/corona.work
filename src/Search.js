@@ -6,7 +6,7 @@ import Title from './components/Title';
 import Card from './components/Card'
 import { useLocation } from 'react-router';
 
-function Search(props) {
+function Search() {
 
     let location = useLocation();
     let place = location.state.location

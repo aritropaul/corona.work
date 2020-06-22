@@ -127,7 +127,7 @@ function Landing() {
             .then(response => response.json())
             .then(data => history.push({
                 pathname: '/search', 
-                state: {location: value, industry: type, jobs: data}
+                state: {location: value, jobs: data}
             }));
         }
         else {
@@ -135,7 +135,7 @@ function Landing() {
             .then(response => response.json())
             .then(data => history.push({
                 pathname: '/search', 
-                state: {location: value, jobs: data}
+                state: {location: value, industry: type, jobs: data}
             }));
         }
     }
