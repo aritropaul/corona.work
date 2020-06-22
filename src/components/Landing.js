@@ -114,20 +114,20 @@ function Landing() {
     
     const handleSubmit = (e) => {
         e.preventDefault()
-        if (industry === "") {
+        if (type === "") {
+            fetch('https://covid-work.herokuapp.com/search?location='+value)
+            .then(response => response.json())
+            .then(data => history.push({
+                pathname: '/search', 
+                state: {location: value, jobs: data}
+            }));
+        }
+        else {
             fetch('https://covid-work.herokuapp.com/search?location='+value+'&type='+type)
             .then(response => response.json())
             .then(data => history.push({
                 pathname: '/search', 
                 state: {location: value, type: type, jobs: data}
-            }));
-        }
-        else {
-            fetch('https://covid-work.herokuapp.com/search?location='+value+'&industry='+industry+'&type='+type)
-            .then(response => response.json())
-            .then(data => history.push({
-                pathname: '/search', 
-                state: {location: value, industry: industry, type: type, jobs: data}
             }));
         }
     }
@@ -153,7 +153,7 @@ function Landing() {
                     placeholder="Search for a location"
                     required
                 ></input>
-                <select value={type} onChange = { e => setType(e.target.value)}className="three columns" required>
+                <select value={type} onChange = { e => setType(e.target.value)}className="three columns">
                     <option value="" disabled selected>Job Type</option>
                     {
                         jobTypes.map((type) => {
