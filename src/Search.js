@@ -20,11 +20,12 @@ function Search(props) {
           <Title location={place} type={type}></Title>
           <div className="container main row">
             {
-                jobs.map((job) =>{ 
+                jobs.map((job, i) =>{ 
                     return (
                         <Card 
                         title={job['Company Name']} 
                         role={job['Roles']}
+                        i={i}
                         link={job['Where to Apply']} ></Card>
                     )
                 })
