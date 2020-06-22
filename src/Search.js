@@ -28,7 +28,7 @@ function Search() {
                             title={job['Company Name']} 
                             role={job['Roles']}
                             i={i}
-                            type={job['Type']}
+                            type={type}
                             link={job['Where to apply']} ></Card>
                         )
                     })
