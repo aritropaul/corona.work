@@ -10,9 +10,9 @@ import { motion } from "framer-motion"
 function Title(props) {
     if (props.location === undefined) {
         return(
-            <div className="container title">
+            <motion.div className="container title">
                 <h1>{props.type} Jobs</h1>
-            </div>
+            </motion.div>
         )
     }
     else {
