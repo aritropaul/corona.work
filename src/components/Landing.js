@@ -165,7 +165,7 @@ function Landing() {
                     }
                 </select>
                 <select value={industry} onChange = { e => setIndustry(e.target.value)}className="three columns">
-                    <option value="" disabled selected>Select your Field</option>
+                    <option value="" disabled selected>Select an Industry</option>
                     {
                         jobIndustry.map((type) => {
                             return(
